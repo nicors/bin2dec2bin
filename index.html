@@ -3,12 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Binary converter</title>
 </head>
 <body>
     
     <script>
-        console.log("Hello World")
+        let binString = '11101';
+        let decimalNum = 0;
+
+        let binDigitArray =  binString.split('').reverse()
+
+        console.log(binDigitArray);
+
+        binDigitArray.forEach((digit, index) => {
+            if (digit == 1) {
+                decimalNum += Math.pow(2, index);
+            }
+        })
+        console.log('Binary: ' + binString);
+        console.log('Decimal: ' + decimalNum);
+
+        let binNum = 0;
+        let auxArray = [];
+        let auxDec = decimalNum;
+
+        while (auxDec >= 1) {
+            auxArray.push(auxDec % 2)
+            console.log(auxDec + '/ 2 = ' + Math.floor(auxDec / 2) + ' Resta: ' + auxDec % 2 );
+            auxDec = Math.floor(auxDec / 2);
+
+        }
+        
+        binNum = auxArray.reverse().join('');
+
+        console.log('New bin: ' + binNum);
     </script>
 </body>
 </html>
