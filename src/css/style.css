@@ -1,0 +1,33 @@
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "l-offset container r-offset";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    
+}
+
+.container {
+    grid-area: container;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.l-offset {
+    grid-area: l-offset;
+}
+
+.r-offset {
+    grid-area: r-offset;
+}
+
+.input-group {
+    margin-top: 1em;
+}
+
+.input-group, .input-group input {
+    width: 100%;
+}
+
+
